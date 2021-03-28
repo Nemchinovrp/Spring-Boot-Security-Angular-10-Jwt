@@ -1,8 +1,9 @@
 package com.nemchinovrp.jwtauthentication.message.request;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.Set;
-
-import javax.validation.constraints.*;
 
 public class SignUpForm {
     @NotBlank
@@ -57,10 +58,10 @@ public class SignUpForm {
     }
 
     public Set<String> getRole() {
-    	return this.role;
+        return this.role;
     }
 
     public void setRole(Set<String> role) {
-    	this.role = role;
+        this.role = role;
     }
 }

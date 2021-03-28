@@ -10,6 +10,7 @@ import com.nemchinovrp.jwtauthentication.model.User;
 import com.nemchinovrp.jwtauthentication.repository.RoleRepository;
 import com.nemchinovrp.jwtauthentication.repository.UserRepository;
 import com.nemchinovrp.jwtauthentication.security.jwt.JwtProvider;
+import com.nemchinovrp.jwtauthentication.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,6 +34,7 @@ public class AuthRestAPIs {
     private final AuthenticationManager authenticationManager;
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
+    private final UserService userService;
     private final PasswordEncoder encoder;
     private final JwtProvider jwtProvider;
 
@@ -97,7 +99,7 @@ public class AuthRestAPIs {
         }
 
         user.setRoles(roles);
-        userRepository.save(user);
+        userService.saveUser(user);
 
         return new ResponseEntity<>(new ResponseMessage("User registered successfully!"), HttpStatus.OK);
     }

@@ -1,12 +1,11 @@
 package com.nemchinovrp.jwtauthentication.repository;
 
-import java.util.Optional;
-
+import com.nemchinovrp.jwtauthentication.model.Role;
+import com.nemchinovrp.jwtauthentication.model.RoleName;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.nemchinovrp.jwtauthentication.model.Role;
-import com.nemchinovrp.jwtauthentication.model.RoleName;
+import java.util.Optional;
 
 @Repository
 public interface RoleRepository extends JpaRepository<Role, Long> {

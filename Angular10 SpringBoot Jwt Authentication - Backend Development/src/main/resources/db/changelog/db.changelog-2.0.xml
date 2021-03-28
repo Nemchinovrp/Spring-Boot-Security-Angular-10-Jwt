@@ -4,22 +4,22 @@
                         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
 
-    <changeSet author="nemchin" id="insert-example">
-        <insert catalogName="admin"
-                dbms="mysql"
-                schemaName="admin"
+    <changeSet author="nemchin" id="insert-roles">
+        <insert catalogName="example_db"
+                dbms="mariadb"
+                schemaName="public"
                 tableName="roles">
             <column name="name" value="ROLE_USER"/>
         </insert>
-        <insert catalogName="admin"
-                dbms="mysql"
-                schemaName="admin"
+        <insert catalogName="example_db"
+                dbms="mariadb"
+                schemaName="public"
                 tableName="roles">
             <column name="name" value="ROLE_PM"/>
         </insert>
-        <insert catalogName="admin"
-                dbms="mysql"
-                schemaName="admin"
+        <insert catalogName="example_db"
+                dbms="mariadb"
+                schemaName="public"
                 tableName="roles">
             <column name="name" value="ROLE_ADMIN"/>
         </insert>

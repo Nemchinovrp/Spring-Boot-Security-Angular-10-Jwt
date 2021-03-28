@@ -10,3 +10,8 @@ https://loizenai.com/build-springboot-crud-application-fullstack-frontend-bootst
 
 3. Angular Nodejs Fullstack CRUD Application with MySQL/PostgreSQL – Angular 10-9-8 HttpClient + Nodejs Express, Sequelize ORM
 https://loizenai.com/angular-nodejs-fullstack-crud-application-with-mysql-postgresql-angular-10-9-8-httpclient-client-nodejs-express-sequelize-orm/
+
+
+show variables like "max_connections";
+
+set global max_connections = 200;

@@ -3,7 +3,7 @@ package com.nemchinovrp.jwtauthentication.security;
 import com.nemchinovrp.jwtauthentication.security.jwt.JwtAuthEntryPoint;
 import com.nemchinovrp.jwtauthentication.security.jwt.JwtAuthTokenFilter;
 import com.nemchinovrp.jwtauthentication.security.services.UserDetailsServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -19,15 +19,13 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity
+@RequiredArgsConstructor
 @EnableGlobalMethodSecurity(
-		prePostEnabled = true
+        prePostEnabled = true
 )
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-    @Autowired
-    UserDetailsServiceImpl userDetailsService;
-
-    @Autowired
-    private JwtAuthEntryPoint unauthorizedHandler;
+    private final UserDetailsServiceImpl userDetailsService;
+    private final JwtAuthEntryPoint unauthorizedHandler;
 
     @Bean
     public JwtAuthTokenFilter authenticationJwtTokenFilter() {

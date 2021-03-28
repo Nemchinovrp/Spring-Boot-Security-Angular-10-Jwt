@@ -1,8 +1,8 @@
 package com.nemchinovrp.jwtauthentication.model;
 
-import javax.persistence.*;
-
 import org.hibernate.annotations.NaturalId;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "roles")
@@ -17,7 +17,8 @@ public class Role {
     @Column(length = 60)
     private RoleName name;
 
-    public Role() {}
+    public Role() {
+    }
 
     public Role(RoleName name) {
         this.name = name;
